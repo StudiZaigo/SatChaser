@@ -1,0 +1,419 @@
+object Main: TMain
+  Left = 669
+  Top = 378
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'SatChaser on CALSAT32'
+  ClientHeight = 226
+  ClientWidth = 273
+  Color = clBtnFace
+  Font.Charset = SHIFTJIS_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  PixelsPerInch = 96
+  TextHeight = 12
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 273
+    Height = 226
+    Align = alClient
+    TabOrder = 0
+    object lblYMD: TLabel
+      Left = 16
+      Top = 12
+      Width = 36
+      Height = 12
+      Caption = 'lblYMD'
+    end
+    object lblAOSAz: TLabel
+      Left = 16
+      Top = 206
+      Width = 48
+      Height = 12
+      Caption = 'lblAOSAz'
+    end
+    object ImgGreen: TImage
+      Left = 144
+      Top = 191
+      Width = 6
+      Height = 12
+      Picture.Data = {
+        07544269746D6170B6000000424DB60000000000000076000000280000000600
+        0000100000000100040000000000400000000000000000000000100000000000
+        0000000000000000800000800000008080008000000080008000808000008080
+        8000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFF
+        FF0088888800AAAAA800AAAAA800AAAAA800AAAAA800AAAAA800AAAAA800AAAA
+        A800AAAAA800AAAAA800AAAAA800AAAAA800AAAAA800AAAAA800AAAAA800AAAA
+        A800}
+      Visible = False
+    end
+    object ImgRed: TImage
+      Left = 144
+      Top = 209
+      Width = 6
+      Height = 12
+      Picture.Data = {
+        07544269746D6170B6000000424DB60000000000000076000000280000000600
+        0000100000000100040000000000400000000000000000000000100000000000
+        0000000000000000800000800000008080008000000080008000808000008080
+        8000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFF
+        FF00888888009999980099999800999998009999980099999800999998009999
+        9800999998009999980099999800999998009999980099999800999998009999
+        9800}
+      Visible = False
+    end
+    object btnTracking: TSpeedButton
+      Left = 144
+      Top = 8
+      Width = 113
+      Height = 33
+      GroupIndex = 1
+      Caption = '&Tracking On'
+      OnClick = btnTrackingClick
+    end
+    object btnStopTracking: TSpeedButton
+      Left = 216
+      Top = 24
+      Width = 41
+      Height = 25
+      GroupIndex = 1
+      Down = True
+    end
+    object GroupBox1: TGroupBox
+      Left = 144
+      Top = 48
+      Width = 113
+      Height = 137
+      Caption = 'Manual'
+      TabOrder = 1
+      object bbLeft: TSpeedButton
+        Left = 8
+        Top = 56
+        Width = 33
+        Height = 33
+        GroupIndex = 2
+        Glyph.Data = {
+          06020000424D0602000000000000760000002800000019000000190000000100
+          0400000000009001000000000000000000001000000000000000000000000000
+          8000008000000080800080000000800080008080000080808000C0C0C0000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FFFFFFFFFFFF
+          FFFFFFFFFFFFF0000000FFFFFFFFFFFFFFFFFFFFFFFFF0000000FFFFFFFFFFFF
+          08FFFFFFFFFFF0000000FFFFFFFFFFF008FFFFFFFFFFF0000000FFFFFFFFFF00
+          08FFFFFFFFFFF0000000FFFFFFFFF00008FFFFFFFFFFF0000000FFFFFFFF0000
+          08888888888880000000FFFFFFF0000000000000000080000000FFFFFF000000
+          00000000000080000000FFFFF000000000000000000080000000FFFF00000000
+          00000000000080000000FFF00000000000000000000080000000FF0000000000
+          00000000000080000000FFF00000000000000000000080000000FFFF00000000
+          00000000000080000000FFFFF000000000000000000080000000FFFFFF000000
+          00000000000080000000FFFFFFF00000000000000000F0000000FFFFFFFF0000
+          0FFFFFFFFFFFF0000000FFFFFFFFF0000FFFFFFFFFFFF0000000FFFFFFFFFF00
+          0FFFFFFFFFFFF0000000FFFFFFFFFFF00FFFFFFFFFFFF0000000FFFFFFFFFFFF
+          0FFFFFFFFFFFF0000000FFFFFFFFFFFFFFFFFFFFFFFFF0000000FFFFFFFFFFFF
+          FFFFFFFFFFFFF0000000}
+        Spacing = 0
+        OnClick = bbGroupeDownClick
+      end
+      object bbDown: TSpeedButton
+        Tag = 3
+        Left = 40
+        Top = 96
+        Width = 33
+        Height = 33
+        GroupIndex = 2
+        Glyph.Data = {
+          06020000424D0602000000000000760000002800000019000000190000000100
+          0400000000009001000000000000000000001000000000000000000000000000
+          8000008000000080800080000000800080008080000080808000C0C0C0000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FFFFFFFFFFFF
+          FFFFFFFFFFFFF0000000FFFFFFFFFFFFFFFFFFFFFFFFF0000000FFFFFFFFFFFF
+          08FFFFFFFFFFF0000000FFFFFFFFFFF0008FFFFFFFFFF0000000FFFFFFFFFF00
+          0008FFFFFFFFF0000000FFFFFFFFF00000008FFFFFFFF0000000FFFFFFFF0000
+          000008FFFFFFF0000000FFFFFFF000000000008FFFFFF0000000FFFFFF000000
+          00000008FFFFF0000000FFFFF0000000000000008FFFF0000000FFFF00000000
+          0000000008FFF0000000FFF00000000000000000008FF0000000FF0000000000
+          00000000000FF0000000FFFFFFF000000000008FFFFFF0000000FFFFFFF00000
+          0000008FFFFFF0000000FFFFFFF000000000008FFFFFF0000000FFFFFFF00000
+          0000008FFFFFF0000000FFFFFFF000000000008FFFFFF0000000FFFFFFF00000
+          0000008FFFFFF0000000FFFFFFF000000000008FFFFFF0000000FFFFFFF00000
+          0000008FFFFFF0000000FFFFFFF000000000008FFFFFF0000000FFFFFFF00000
+          000000FFFFFFF0000000FFFFFFFFFFFFFFFFFFFFFFFFF0000000FFFFFFFFFFFF
+          FFFFFFFFFFFFF0000000}
+        Spacing = 0
+        OnClick = bbGroupeDownClick
+      end
+      object bbUp: TSpeedButton
+        Tag = 2
+        Left = 40
+        Top = 16
+        Width = 33
+        Height = 33
+        GroupIndex = 2
+        Glyph.Data = {
+          06020000424D0602000000000000760000002800000019000000190000000100
+          0400000000009001000000000000000000001000000000000000000000000000
+          8000008000000080800080000000800080008080000080808000C0C0C0000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FFFFFFFF8888
+          8888888FFFFFF0000000FFFFFFF000000000008FFFFFF0000000FFFFFFF00000
+          0000008FFFFFF0000000FFFFFFF000000000008FFFFFF0000000FFFFFFF00000
+          0000008FFFFFF0000000FFFFFFF000000000008FFFFFF0000000FFFFFFF00000
+          0000008FFFFFF0000000FFFFFFF000000000008FFFFFF0000000FFFFFFF00000
+          0000008FFFFFF0000000FFFFFFF000000000008FFFFFF0000000FFFFFFF00000
+          0000008FFFFFF0000000FFFFFFF0000000000088888FF0000000FF0000000000
+          00000000000FF0000000FFF0000000000000000000FFF0000000FFFF00000000
+          000000000FFFF0000000FFFFF000000000000000FFFFF0000000FFFFFF000000
+          0000000FFFFFF0000000FFFFFFF00000000000FFFFFFF0000000FFFFFFFF0000
+          00000FFFFFFFF0000000FFFFFFFFF0000000FFFFFFFFF0000000FFFFFFFFFF00
+          000FFFFFFFFFF0000000FFFFFFFFFFF000FFFFFFFFFFF0000000FFFFFFFFFFFF
+          0FFFFFFFFFFFF0000000FFFFFFFFFFFFFFFFFFFFFFFFF0000000FFFFFFFFFFFF
+          FFFFFFFFFFFFF0000000}
+        Spacing = 0
+        OnClick = bbGroupeDownClick
+      end
+      object bbRight: TSpeedButton
+        Tag = 1
+        Left = 72
+        Top = 56
+        Width = 33
+        Height = 33
+        GroupIndex = 2
+        Glyph.Data = {
+          06020000424D0602000000000000760000002800000019000000190000000100
+          0400000000009001000000000000000000001000000000000000000000000000
+          8000008000000080800080000000800080008080000080808000C0C0C0000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FFFFFFFFFFFF
+          FFFFFFFFFFFFF0000000FFFFFFFFFFFFFFFFFFFFFFFFF0000000FFFFFFFFFFFF
+          08FFFFFFFFFFF0000000FFFFFFFFFFFF008FFFFFFFFFF0000000FFFFFFFFFFFF
+          0008FFFFFFFFF0000000FFFFFFFFFFFF00008FFFFFFFF0000000FF8888888888
+          000008FFFFFFF0000000F000000000000000008FFFFFF0000000F00000000000
+          00000008FFFFF0000000F00000000000000000008FFFF0000000F00000000000
+          0000000008FFF0000000F0000000000000000000008FF0000000F00000000000
+          00000000000FF0000000F000000000000000000000FFF0000000F00000000000
+          000000000FFFF0000000F0000000000000000000FFFFF0000000F00000000000
+          0000000FFFFFF0000000F00000000000000000FFFFFFF0000000FFFFFFFFFFFF
+          00000FFFFFFFF0000000FFFFFFFFFFFF0000FFFFFFFFF0000000FFFFFFFFFFFF
+          000FFFFFFFFFF0000000FFFFFFFFFFFF00FFFFFFFFFFF0000000FFFFFFFFFFFF
+          0FFFFFFFFFFFF0000000FFFFFFFFFFFFFFFFFFFFFFFFF0000000FFFFFFFFFFFF
+          FFFFFFFFFFFFF0000000}
+        Spacing = 0
+        OnClick = bbGroupeDownClick
+      end
+      object bbOff: TSpeedButton
+        Tag = 5
+        Left = 3
+        Top = 95
+        Width = 33
+        Height = 33
+        GroupIndex = 2
+        Down = True
+        Spacing = 0
+      end
+    end
+    object grpAntenna: TGroupBox
+      Left = 17
+      Top = 86
+      Width = 121
+      Height = 56
+      Caption = 'Antenna'
+      TabOrder = 2
+      object Label8: TLabel
+        Left = 18
+        Top = 18
+        Width = 15
+        Height = 12
+        Caption = 'Az.'
+      end
+      object lblAntennaAz: TLabel
+        Left = 50
+        Top = 16
+        Width = 67
+        Height = 12
+        Caption = 'lblAntennaAz'
+      end
+      object Label10: TLabel
+        Left = 18
+        Top = 36
+        Width = 12
+        Height = 12
+        Caption = 'El.'
+      end
+      object lblAntennaEl: TLabel
+        Left = 50
+        Top = 36
+        Width = 64
+        Height = 12
+        Caption = 'lblAntennaEl'
+      end
+    end
+    object grpRotator: TGroupBox
+      Left = 17
+      Top = 144
+      Width = 121
+      Height = 56
+      Caption = 'Rotator'
+      TabOrder = 3
+      object Label1: TLabel
+        Left = 18
+        Top = 16
+        Width = 15
+        Height = 12
+        Caption = 'Az.'
+      end
+      object lblRotatorAz: TLabel
+        Left = 50
+        Top = 16
+        Width = 63
+        Height = 12
+        Caption = 'lblRotatorAz'
+      end
+      object Label5: TLabel
+        Left = 18
+        Top = 36
+        Width = 12
+        Height = 12
+        Caption = 'El.'
+      end
+      object lblRotatorEl: TLabel
+        Left = 50
+        Top = 36
+        Width = 60
+        Height = 12
+        Caption = 'lblRotatorEl'
+      end
+      object ImgFlipMode: TImage
+        Left = 6
+        Top = 36
+        Width = 6
+        Height = 12
+        Picture.Data = {
+          07544269746D6170B6000000424DB60000000000000076000000280000000600
+          0000100000000100040000000000400000000000000000000000100000000000
+          0000000000000000800000800000008080008000000080008000808000008080
+          8000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFF
+          FF0088888800AAAAA800AAAAA800AAAAA800AAAAA800AAAAA800AAAAA800AAAA
+          A800AAAAA800AAAAA800AAAAA800AAAAA800AAAAA800AAAAA800AAAAA800AAAA
+          A800}
+      end
+      object ImgOverlap: TImage
+        Left = 6
+        Top = 16
+        Width = 6
+        Height = 12
+        Picture.Data = {
+          07544269746D6170B6000000424DB60000000000000076000000280000000600
+          0000100000000100040000000000400000000000000000000000100000000000
+          0000000000000000800000800000008080008000000080008000808000008080
+          8000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFF
+          FF0088888800AAAAA800AAAAA800AAAAA800AAAAA800AAAAA800AAAAA800AAAA
+          A800AAAAA800AAAAA800AAAAA800AAAAA800AAAAA800AAAAA800AAAAA800AAAA
+          A800}
+      end
+    end
+    object grpSatellite: TGroupBox
+      Left = 17
+      Top = 30
+      Width = 121
+      Height = 56
+      Caption = 'Satellite'
+      TabOrder = 4
+      object Label2: TLabel
+        Left = 18
+        Top = 18
+        Width = 15
+        Height = 12
+        Caption = 'Az.'
+      end
+      object lblSatelliteAz: TLabel
+        Left = 50
+        Top = 16
+        Width = 67
+        Height = 12
+        Caption = 'lblSatelliteAz'
+      end
+      object Label3: TLabel
+        Left = 18
+        Top = 36
+        Width = 12
+        Height = 12
+        Caption = 'El.'
+      end
+      object lblSatelliteEl: TLabel
+        Left = 50
+        Top = 36
+        Width = 64
+        Height = 12
+        Caption = 'lblSatelliteEl'
+      end
+    end
+    object btnTest: TButton
+      Left = 64
+      Top = 8
+      Width = 73
+      Height = 25
+      Caption = 'btnTest'
+      TabOrder = 0
+      Visible = False
+      OnClick = btnTestClick
+    end
+  end
+  object Timer1: TTimer
+    Enabled = False
+    OnTimer = Timer1Timer
+    Left = 216
+    Top = 192
+  end
+  object MainMenu1: TMainMenu
+    Left = 152
+    Top = 192
+    object N4: TMenuItem
+      Action = actExit
+    end
+    object GS231: TMenuItem
+      Caption = 'GS232'
+      object N5: TMenuItem
+        Action = actGotoParking
+      end
+      object N2: TMenuItem
+        Action = actOptions
+      end
+    end
+    object N3: TMenuItem
+      Caption = 'Help'
+    end
+    object ActAboutBox1: TMenuItem
+      Action = actAboutBox
+      Caption = 'Version'
+    end
+  end
+  object ActionList1: TActionList
+    Left = 184
+    Top = 192
+    object actOptions: TAction
+      Caption = 'Options'
+      ShortCut = 16474
+      OnExecute = actOptionsExecute
+    end
+    object actExit: TAction
+      Caption = 'Exit'
+      ShortCut = 16472
+      OnExecute = actExitExecute
+    end
+    object actGotoParking: TAction
+      Caption = 'Go to Parking'
+      ShortCut = 16464
+      OnExecute = actGotoParkingExecute
+    end
+    object actAboutBox: TAction
+      Caption = 'AboutBox'
+      ShortCut = 16449
+      OnExecute = actAboutBoxExecute
+    end
+  end
+end

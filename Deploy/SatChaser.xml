@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<Main>
+	</Main>
+	<Registry>
+		<CALSAT32 Type="10">\Software\VB and VBA Program Settings\JR1HUO\CALSAT32</CALSAT32>
+		<CALSAT99 Type="10">\Software\VB and VBA Program Settings\JR1HUO\CALSAT99</CALSAT99>
+	</Registry>
+	<Options>
+		<TabIndex Type="9">0</TabIndex>
+		<App>
+			<App Type="10">CALSAT32</App>
+			<RegKey Type="10">\Software\VB and VBA Program Settings\JR1HUO\CALSAT32</RegKey>
+			<Inifile Type="10">C:\Calsat32\CALSAT32.INI</Inifile>
+			<Elements Type="10">C:\Calsat32\ELEM.TXT</Elements>
+		</App>
+		<GS232>
+			<AzRotator Type="2">-1</AzRotator>
+			<ElRotator Type="2">-1</ElRotator>
+			<GsMode Type="9">1</GsMode>
+			<RotateSpeed Type="9">0</RotateSpeed>
+			<ParkingAz Type="9">271</ParkingAz>
+			<ParkingEl Type="9">0</ParkingEl>
+			<GoParking Type="2">-1</GoParking>
+			<Offset Type="9">-45</Offset>
+		</GS232>
+		<Com>
+			<Port Type="10">COM3</Port>
+			<BaudRate Type="10">9600</BaudRate>
+			<DataBits Type="10">8</DataBits>
+			<Parity Type="10">None</Parity>
+			<StopBits Type="10">1</StopBits>
+			<FlowControl Type="10">Hardware</FlowControl>
+		</Com>
+	</Options>
+</root>
