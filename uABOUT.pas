@@ -45,6 +45,8 @@ begin
   lblCopyRight.Caption    :=  GetVersionInfo(ExeName, vrLegalCopyright);
   lblComment.Caption      :=  GetVersionInfo(ExeName, vrComments);
   lblCompanyName.Caption  :=  GetVersionInfo(ExeName, vrCompanyName);
+
+
 end;
 
 end.

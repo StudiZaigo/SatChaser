@@ -4,25 +4,25 @@ object Options: TOptions
   BorderIcons = []
   BorderStyle = bsDialog
   Caption = 'Options'
-  ClientHeight = 241
+  ClientHeight = 248
   ClientWidth = 351
   Color = clBtnFace
   Font.Charset = SHIFTJIS_CHARSET
   Font.Color = clWindowText
-  Font.Height = -12
-  Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+  Font.Height = -15
+  Font.Name = 'MS UI Gothic'
   Font.Style = []
   OldCreateOrder = False
   Position = poDesktopCenter
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   PixelsPerInch = 96
-  TextHeight = 12
+  TextHeight = 15
   object PageControl1: TPageControl
     Left = 0
     Top = 0
     Width = 351
-    Height = 241
+    Height = 248
     ActivePage = tabApp
     Align = alClient
     TabOrder = 0
@@ -31,41 +31,40 @@ object Options: TOptions
       object Label7: TLabel
         Left = 9
         Top = 12
-        Width = 57
-        Height = 12
+        Width = 70
+        Height = 15
         Caption = 'Parent App'
       end
       object Label14: TLabel
         Left = 9
         Top = 84
-        Width = 103
-        Height = 12
-        Caption = 'Satellite information'
+        Width = 151
+        Height = 15
+        Caption = 'Satellite information file'
       end
       object Label16: TLabel
         Left = 9
         Top = 36
-        Width = 37
-        Height = 12
+        Width = 46
+        Height = 15
         Caption = 'INIFILE'
       end
       object cmbApp: TComboBox
-        Left = 81
+        Left = 85
         Top = 9
         Width = 89
-        Height = 20
+        Height = 23
         TabOrder = 0
-        Text = 'Calsat32'
+        Text = 'CALSAT32'
         OnChange = cmbAppChange
         Items.Strings = (
-          'CALSAT32'
-          'CALSAT99')
+          'CALSAT32')
       end
       object edtInifile: TEdit
         Left = 8
         Top = 56
         Width = 265
-        Height = 20
+        Height = 23
         TabOrder = 1
       end
       object btnFile1: TButton
@@ -75,12 +74,13 @@ object Options: TOptions
         Height = 25
         Caption = 'Refer'#12539#12539
         TabOrder = 2
+        OnClick = btnFile1Click
       end
       object edtElements: TEdit
         Left = 8
         Top = 104
         Width = 265
-        Height = 20
+        Height = 23
         TabOrder = 3
       end
       object btnFile2: TButton
@@ -118,70 +118,264 @@ object Options: TOptions
         Left = 8
         Top = 136
         Width = 265
-        Height = 20
+        Height = 23
         TabOrder = 7
         Text = 'edtRegKey'
       end
     end
+    object tabGs232: TTabSheet
+      Caption = 'GS232'
+      ImageIndex = 2
+      object Label9: TLabel
+        Left = 13
+        Top = 10
+        Width = 47
+        Height = 15
+        Caption = 'Interval'
+      end
+      object Label10: TLabel
+        Left = 144
+        Top = 10
+        Width = 39
+        Height = 15
+        Caption = 'mSec.'
+      end
+      object grpParking: TGroupBox
+        Left = 3
+        Top = 149
+        Width = 262
+        Height = 68
+        Caption = 'Parking'
+        TabOrder = 2
+        object Label12: TLabel
+          Left = 12
+          Top = 18
+          Width = 51
+          Height = 15
+          Caption = 'Azimuth'
+        end
+        object Label13: TLabel
+          Left = 12
+          Top = 44
+          Width = 57
+          Height = 15
+          Caption = 'Elevation'
+        end
+        object edtParkingAz: TEdit
+          Left = 77
+          Top = 17
+          Width = 33
+          Height = 23
+          Alignment = taRightJustify
+          ImeMode = imDisable
+          NumbersOnly = True
+          TabOrder = 0
+          Text = '0'
+        end
+        object edtParkingEl: TEdit
+          Left = 77
+          Top = 42
+          Width = 33
+          Height = 23
+          Alignment = taRightJustify
+          ImeMode = imDisable
+          NumbersOnly = True
+          TabOrder = 1
+          Text = '90'
+        end
+        object cbxGoParking: TCheckBox
+          Left = 133
+          Top = 46
+          Width = 110
+          Height = 17
+          Caption = 'Go to Parking'
+          TabOrder = 2
+        end
+        object btnGetPosition: TButton
+          Left = 133
+          Top = 12
+          Width = 110
+          Height = 28
+          Caption = 'Get Position'
+          TabOrder = 3
+          OnClick = btnGetPositionClick
+        end
+      end
+      object btnOk2: TButton
+        Left = 272
+        Top = 45
+        Width = 57
+        Height = 33
+        Caption = 'Ok'
+        Default = True
+        ModalResult = 1
+        TabOrder = 3
+        OnClick = btnOk0Click
+      end
+      object btnCancel2: TButton
+        Left = 272
+        Top = 89
+        Width = 57
+        Height = 33
+        Cancel = True
+        Caption = 'Cancel'
+        ModalResult = 2
+        TabOrder = 4
+        OnClick = btnCancel0Click
+      end
+      object grpAzimuth: TGroupBox
+        Left = 3
+        Top = 30
+        Width = 250
+        Height = 71
+        Caption = 'Azimuth rotator'
+        TabOrder = 1
+        object Label15: TLabel
+          Left = 129
+          Top = 46
+          Width = 39
+          Height = 15
+          Caption = 'Speed'
+        end
+        object Label8: TLabel
+          Left = 129
+          Top = 23
+          Width = 41
+          Height = 15
+          Caption = 'Offset'
+        end
+        object rgpAzimuth: TRadioGroup
+          Left = 3
+          Top = 17
+          Width = 115
+          Height = 39
+          Color = clBtnFace
+          Columns = 2
+          ItemIndex = 0
+          Items.Strings = (
+            '450'#176
+            '360'#176)
+          ParentColor = False
+          TabOrder = 0
+          OnClick = rgpAzimuthClick
+        end
+        object cmbRotateSpeed: TComboBox
+          Left = 180
+          Top = 43
+          Width = 60
+          Height = 23
+          TabOrder = 2
+          Text = 'Low'
+          Items.Strings = (
+            'Low'
+            'Medium 1'
+            'Medium 2'
+            'High')
+        end
+        object edtAzOffset: TEdit
+          Left = 180
+          Top = 17
+          Width = 45
+          Height = 23
+          Alignment = taRightJustify
+          ImeMode = imDisable
+          TabOrder = 1
+          Text = 'edtAzOffset'
+          OnChange = edtAzOffsetChange
+        end
+      end
+      object edtIntervalTime: TEdit
+        Left = 80
+        Top = 6
+        Width = 57
+        Height = 23
+        Alignment = taRightJustify
+        ImeMode = imDisable
+        MaxLength = 5
+        NumbersOnly = True
+        TabOrder = 0
+        Text = 'edtIntervalTime'
+        OnChange = edtIntervalTimeChange
+      end
+      object rgpElevation: TRadioGroup
+        Left = 3
+        Top = 104
+        Width = 210
+        Height = 39
+        Caption = 'Elevation rotator'
+        Columns = 3
+        ItemIndex = 0
+        Items.Strings = (
+          '180'#176
+          '90'#176
+          'None')
+        TabOrder = 5
+        OnClick = rgpElevationClick
+      end
+    end
     object tabCom: TTabSheet
-      Caption = 'Com port'
+      Caption = 'COM port'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label1: TLabel
         Left = 15
         Top = 14
-        Width = 41
-        Height = 12
+        Width = 53
+        Height = 15
         Caption = 'Port No.'
       end
       object Label2: TLabel
         Left = 15
-        Top = 38
-        Width = 54
-        Height = 12
+        Top = 44
+        Width = 66
+        Height = 15
         Caption = 'Baud Rate'
       end
       object Label3: TLabel
         Left = 15
-        Top = 62
-        Width = 49
-        Height = 12
+        Top = 74
+        Width = 59
+        Height = 15
         Caption = 'Data Bits'
       end
       object Label4: TLabel
         Left = 15
-        Top = 86
-        Width = 30
-        Height = 12
+        Top = 105
+        Width = 36
+        Height = 15
         Caption = 'Parity'
       end
       object Label5: TLabel
         Left = 15
-        Top = 110
-        Width = 48
-        Height = 12
+        Top = 135
+        Width = 59
+        Height = 15
         Caption = 'Stop Bits'
       end
       object Label6: TLabel
         Left = 15
-        Top = 134
-        Width = 65
-        Height = 12
+        Top = 166
+        Width = 81
+        Height = 15
         Caption = 'Flow Cotorol'
       end
-      object cmbPort: TComboBox
+      object cmbComPort: TComboBox
         Left = 112
         Top = 8
         Width = 97
-        Height = 20
+        Height = 23
         Sorted = True
         TabOrder = 0
         Text = 'Com3'
-        OnChange = cmbPortChange
+        OnChange = cmbComPortChange
       end
       object cmbBaudRate: TComboBox
         Left = 112
-        Top = 32
+        Top = 39
         Width = 97
-        Height = 20
+        Height = 23
         TabOrder = 1
         Text = '9600'
         Items.Strings = (
@@ -197,19 +391,19 @@ object Options: TOptions
       end
       object cmbDataBits: TComboBox
         Left = 112
-        Top = 56
+        Top = 70
         Width = 97
-        Height = 20
+        Height = 23
         TabOrder = 2
         Text = '8'
         Items.Strings = (
           '8')
       end
-      object cmbParityBits: TComboBox
+      object cmbParity: TComboBox
         Left = 112
-        Top = 80
+        Top = 101
         Width = 97
-        Height = 20
+        Height = 23
         TabOrder = 3
         Text = #12497#12522#12486#12451#12394#12375
         Items.Strings = (
@@ -219,22 +413,21 @@ object Options: TOptions
           '')
       end
       object cmbStopBits: TComboBox
-        Left = 112
-        Top = 104
+        Left = 113
+        Top = 132
         Width = 97
-        Height = 20
+        Height = 23
         TabOrder = 4
         Text = '1'
         Items.Strings = (
           '1'
-          '1.5'
           '2')
       end
       object cmbFlowControl: TComboBox
-        Left = 112
-        Top = 128
+        Left = 113
+        Top = 163
         Width = 97
-        Height = 20
+        Height = 23
         TabOrder = 5
         Text = #12394#12375
         Items.Strings = (
@@ -264,174 +457,6 @@ object Options: TOptions
         ModalResult = 1
         TabOrder = 6
         OnClick = btnOk0Click
-      end
-    end
-    object tabGs232: TTabSheet
-      Caption = 'GS232'
-      ImageIndex = 2
-      object grpElevation: TGroupBox
-        Left = 3
-        Top = 80
-        Width = 246
-        Height = 39
-        Caption = 'Elevation rotator'
-        TabOrder = 0
-        object rbtEl90: TRadioButton
-          Left = 93
-          Top = 19
-          Width = 72
-          Height = 17
-          Caption = '90'#176
-          TabOrder = 0
-        end
-        object rbtEl180: TRadioButton
-          Left = 22
-          Top = 19
-          Width = 65
-          Height = 17
-          Caption = '180'#176
-          Checked = True
-          TabOrder = 1
-          TabStop = True
-        end
-      end
-      object grpParking: TGroupBox
-        Left = 3
-        Top = 125
-        Width = 249
-        Height = 76
-        Caption = 'Parking'
-        TabOrder = 1
-        object Label12: TLabel
-          Left = 16
-          Top = 24
-          Width = 41
-          Height = 12
-          Caption = 'Azimuth'
-        end
-        object Label13: TLabel
-          Left = 16
-          Top = 48
-          Width = 47
-          Height = 12
-          Caption = 'Elevation'
-        end
-        object edtParkingAz: TEdit
-          Left = 69
-          Top = 20
-          Width = 33
-          Height = 20
-          TabOrder = 0
-          Text = '0'
-        end
-        object edtParkingEl: TEdit
-          Left = 69
-          Top = 43
-          Width = 33
-          Height = 20
-          TabOrder = 1
-          Text = '90'
-        end
-        object cbxGoParking: TCheckBox
-          Left = 120
-          Top = 52
-          Width = 110
-          Height = 17
-          Caption = 'Go to Pparking'
-          TabOrder = 2
-        end
-        object btnGetPosition: TButton
-          Left = 120
-          Top = 18
-          Width = 110
-          Height = 28
-          Caption = 'Get position'
-          TabOrder = 3
-          OnClick = btnGetPositionClick
-        end
-      end
-      object btnOk2: TButton
-        Left = 272
-        Top = 24
-        Width = 57
-        Height = 33
-        Caption = 'Ok'
-        Default = True
-        ModalResult = 1
-        TabOrder = 2
-        OnClick = btnOk0Click
-      end
-      object btnCancel2: TButton
-        Left = 272
-        Top = 64
-        Width = 57
-        Height = 33
-        Cancel = True
-        Caption = 'Cancel'
-        ModalResult = 2
-        TabOrder = 3
-        OnClick = btnCancel0Click
-      end
-      object grpAzimuth: TGroupBox
-        Left = 9
-        Top = 3
-        Width = 243
-        Height = 71
-        Caption = 'Azimuth rotator'
-        TabOrder = 4
-        object Label15: TLabel
-          Left = 116
-          Top = 42
-          Width = 31
-          Height = 12
-          Caption = 'Speed'
-        end
-        object Label8: TLabel
-          Left = 16
-          Top = 42
-          Width = 32
-          Height = 12
-          Caption = 'Offset'
-        end
-        object rbtAz450: TRadioButton
-          Left = 24
-          Top = 16
-          Width = 49
-          Height = 17
-          Caption = '450'#176
-          Checked = True
-          TabOrder = 0
-          TabStop = True
-        end
-        object rbtAz360: TRadioButton
-          Left = 79
-          Top = 15
-          Width = 57
-          Height = 17
-          Caption = '360'#176
-          TabOrder = 1
-        end
-        object cmbSpeed: TComboBox
-          Left = 159
-          Top = 39
-          Width = 72
-          Height = 20
-          TabOrder = 3
-          Text = 'Low'
-          Items.Strings = (
-            'Low'
-            'Medium 1'
-            'Medium 2'
-            'High')
-        end
-        object edtOffset: TEdit
-          Left = 56
-          Top = 39
-          Width = 49
-          Height = 20
-          TabOrder = 2
-          Text = 'edtOffset'
-        end
       end
     end
   end

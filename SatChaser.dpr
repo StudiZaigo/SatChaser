@@ -4,8 +4,7 @@ uses
   Windows,
   Forms,
   uMain in 'uMain.pas' {Main},
-  uOptions in 'uOptions.pas' {Options},
-  uABOUT in 'uABOUT.pas' {AboutBox};
+  uConstant in 'uConstant.pas';
 
 const
   UniqueName = 'MutexSatChaserEx';
@@ -23,9 +22,7 @@ begin
     begin
     Application.Initialize;
     Application.CreateForm(TMain, Main);
-    Application.CreateForm(TAboutBox, AboutBox);
-    Application.CreateForm(TOptions, Options);
-    Application.Run;
+  Application.Run;
     end;
 end.
 

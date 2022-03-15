@@ -84,11 +84,11 @@ begin
   try
     with Timeouts do
       begin
-      //  (受信トータルタイムアウト) =  ReadTotalMultiplier * (受信予定バイト数) +  ReadTotalConstant
-      ReadInterval        := 100;   // 0.5秒(ms)(0でタイムアウトなし)
-      ReadTotalMultiplier := 10;    // Read : 1バイトに対するタイムアウト乗数(0でタイムアウトなし)
-      ReadTotalConstant   := 100;   // Read : 0バイト時のタイムアウト定数(0でタイムアウトなし)
-      //  (送信トータルタイムアウト) =  WriteTotalMultiplier * (送信予定バイト数) +  WriteTotalConstant
+//  (受信トータルタイムアウト) =  ReadTotalMultiplier * (受信予定バイト数) +  ReadTotalConstant
+      ReadInterval        := 500;     // 0.5秒(ms)(0でタイムアウトなし)
+      ReadTotalMultiplier := 10;      // 入力タイムアウトの乗数 mSec/Byte : 1バイトに対するタイムアウト乗数(0でタイムアウトなし)
+      ReadTotalConstant   := 500;     // 入力タイムアウトの定数 : 0バイト時のタイムアウト定数(0でタイムアウトなし)
+//  (送信トータルタイムアウト) =  WriteTotalMultiplier * (送信予定バイト数) +  WriteTotalConstant
       WriteTotalMultiplier := 10;   // Write : 1バイトに対するタイムアウト乗数(0でタイムアウトなし)
       WriteTotalConstant  := 100;   // Write : 0バイト時のタイムアウト定数(0でタイムアウトなし)
       end;
@@ -105,11 +105,11 @@ end;
 
 procedure TCPortX.Open();
 begin
-//  if FDelimiter = '' then
-//    TriggersOnRxChar := false
-//  else
-//    TriggersOnRxChar := true;
-//  FActive := true;
+  if FDelimiter = '' then
+    TriggersOnRxChar := false
+  else
+    TriggersOnRxChar := true;
+  FActive := true;
   inherited;
 end;
 
