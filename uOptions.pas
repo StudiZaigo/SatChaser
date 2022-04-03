@@ -68,12 +68,9 @@ type
     procedure btnOk0Click(Sender: TObject);
     procedure cmbAppChange(Sender: TObject);
     procedure cmbComPortChange(Sender: TObject);
-    procedure edtAzOffsetChange(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure FormCreate(Sender: TObject);
     procedure btnFile1Click(Sender: TObject);
-    procedure rgpAzimuthClick(Sender: TObject);
-    procedure rgpElevationClick(Sender: TObject);
     procedure edtIntervalTimeChange(Sender: TObject);
   private
     { Private êÈåæ }
@@ -188,6 +185,22 @@ end;
 
 procedure TOptions.btnOk0Click(Sender: TObject);
 begin
+  SetIntervalTime(StrToInt(edtIntervalTime.Text));
+  SetAzRotator(TAzRotator(rgpAzimuth.ItemIndex));
+  SetAzOffset(StrToInt(EdtAzOffset.Text));
+  SetRotateSpeed(cmbRotateSpeed.ItemIndex);
+  SetElRotator(TElRotator(rgpElevation.ItemIndex));
+  SetParkingAz(StrToInt(edtParkingAz.Text));
+  SetParkingEl(StrToInt(edtParkingEl.Text));
+  SetGoParking(cbxGoParking.Checked);
+
+  SetComPort(cmbComPort.Items[cmbComPort.ItemIndex]);
+  SetBaudRate(StrToInt(cmbBaudRate.Items[cmbBaudRate.ItemIndex]));
+  SetDataBits(cmbDataBits.Items[cmbDataBits.ItemIndex]);
+  SetParity(cmbParity.Items[cmbParity.ItemIndex]);
+  SetStopBits(cmbStopBits.Items[cmbStopBits.ItemIndex]);
+  SetFlowControl(cmbFlowControl.Items[cmbFlowControl.ItemIndex]);
+
   WriteXmlIniFile1();
   WriteXmlIniFile2();
 end;
@@ -255,17 +268,11 @@ begin
     cmbComPort.SetFocus;
     exit;
     end;
-  FComPort := cmbComPort.Items[i];     // ?
-end;
-
-procedure TOptions.edtAzOffsetChange(Sender: TObject);
-begin
-  FAzOffset := StrToInt(EdtAzOffset.Text);
+//  FComPort := cmbComPort.Items[i];     // ?
 end;
 
 procedure TOptions.edtIntervalTimeChange(Sender: TObject);
 begin
-  FIntervalTime := StrToInt(TEdit(Sender).Text);
 //  cmbFlowControl.Text := FFlowControl;
 end;
 
@@ -377,16 +384,6 @@ begin
   finally
     FreeAndNil(XMLIni);
   end;
-end;
-
-procedure TOptions.rgpAzimuthClick(Sender: TObject);
-begin
-  FAzRotator := TAzRotator(rgpAzimuth.ItemIndex);
-end;
-
-procedure TOptions.rgpElevationClick(Sender: TObject);
-begin
-  FElRotator := TElRotator(rgpElevation.ItemIndex);
 end;
 
 procedure TOptions.WriteXmlIniFile1();
@@ -576,7 +573,7 @@ end;
 procedure TOptions.SetStopBits(const Value: string);
 begin
   FStopBits := Value;
-  cmbStopBits.Text := IntToStr(FRotateSpeed);
+  cmbStopBits.Text := FStopBits;
 end;
 
 end.

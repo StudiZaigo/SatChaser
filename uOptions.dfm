@@ -257,7 +257,6 @@ object Options: TOptions
             '360'#176)
           ParentColor = False
           TabOrder = 0
-          OnClick = rgpAzimuthClick
         end
         object cmbRotateSpeed: TComboBox
           Left = 180
@@ -281,7 +280,6 @@ object Options: TOptions
           ImeMode = imDisable
           TabOrder = 1
           Text = 'edtAzOffset'
-          OnChange = edtAzOffsetChange
         end
       end
       object edtIntervalTime: TEdit
@@ -310,15 +308,10 @@ object Options: TOptions
           '90'#176
           'None')
         TabOrder = 5
-        OnClick = rgpElevationClick
       end
     end
     object tabCom: TTabSheet
       Caption = 'COM port'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label1: TLabel
         Left = 15
         Top = 14
