@@ -11,7 +11,7 @@
 	<Options>
 		<Left Type="9">782</Left>
 		<Top Type="9">402</Top>
-		<TabIndex Type="9">1</TabIndex>
+		<TabIndex Type="9">2</TabIndex>
 		<App>
 			<App Type="10">CALSAT32</App>
 			<RegKey Type="10">\Software\VB and VBA Program Settings\JR1HUO\CALSAT32</RegKey>
