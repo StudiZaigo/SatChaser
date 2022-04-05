@@ -30,9 +30,9 @@ object Main: TMain
     PopupMenu = PopupMenu1
     TabOrder = 0
     object lblYMD: TLabel
-      Left = 480
+      Left = 475
       Top = 5
-      Width = 148
+      Width = 153
       Height = 15
       Alignment = taCenter
       AutoSize = False

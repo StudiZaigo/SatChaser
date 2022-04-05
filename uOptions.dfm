@@ -23,7 +23,7 @@ object Options: TOptions
     Top = 0
     Width = 351
     Height = 248
-    ActivePage = tabCom
+    ActivePage = tabGs232
     Align = alClient
     TabOrder = 0
     object tabApp: TTabSheet
@@ -293,7 +293,6 @@ object Options: TOptions
         NumbersOnly = True
         TabOrder = 0
         Text = 'edtIntervalTime'
-        OnChange = edtIntervalTimeChange
       end
       object rgpElevation: TRadioGroup
         Left = 3

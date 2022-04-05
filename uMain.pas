@@ -668,6 +668,7 @@ begin
     FAntennaEl := 0;
     FRotatorAz := 0;
     FRotatorEl := 0;
+    e1 := false; e2 := false;
     if cmd = 'C' then
       begin
       i := 0;
@@ -1050,8 +1051,8 @@ begin
 end;
 
 procedure TMain.actDebugExecute(Sender: TObject);
-var
-  s: string;
+//var
+//  s: string;
 begin
   Timer1.Enabled := false;
 //  Debug.ShowModal;
