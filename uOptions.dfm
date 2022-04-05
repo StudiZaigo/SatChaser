@@ -23,7 +23,7 @@ object Options: TOptions
     Top = 0
     Width = 351
     Height = 248
-    ActivePage = tabApp
+    ActivePage = tabCom
     Align = alClient
     TabOrder = 0
     object tabApp: TTabSheet
@@ -52,7 +52,7 @@ object Options: TOptions
       object cmbApp: TComboBox
         Left = 85
         Top = 9
-        Width = 89
+        Width = 108
         Height = 23
         TabOrder = 0
         Text = 'CALSAT32'
@@ -272,8 +272,8 @@ object Options: TOptions
             'High')
         end
         object edtAzOffset: TEdit
-          Left = 180
-          Top = 17
+          Left = 176
+          Top = 14
           Width = 45
           Height = 23
           Alignment = taRightJustify
@@ -283,8 +283,8 @@ object Options: TOptions
         end
       end
       object edtIntervalTime: TEdit
-        Left = 80
-        Top = 6
+        Left = 81
+        Top = 3
         Width = 57
         Height = 23
         Alignment = taRightJustify

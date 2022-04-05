@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
 	<Main>
-		<Left Type="9">1275</Left>
-		<Top Type="9">714</Top>
+		<Left Type="9">13</Left>
+		<Top Type="9">706</Top>
 	</Main>
 	<Registry>
 		<CALSAT32 Type="10">\Software\VB and VBA Program Settings\JR1HUO\CALSAT32</CALSAT32>
@@ -11,7 +11,7 @@
 	<Options>
 		<Left Type="9">782</Left>
 		<Top Type="9">402</Top>
-		<TabIndex Type="9">2</TabIndex>
+		<TabIndex Type="9">1</TabIndex>
 		<App>
 			<App Type="10">CALSAT32</App>
 			<RegKey Type="10">\Software\VB and VBA Program Settings\JR1HUO\CALSAT32</RegKey>
@@ -22,9 +22,9 @@
 			<Interval Type="9">1000</Interval>
 			<AzRotator Type="9">0</AzRotator>
 			<ElRotator Type="9">0</ElRotator>
-			<RotateSpeed Type="9">0</RotateSpeed>
+			<RotateSpeed Type="9">3</RotateSpeed>
 			<AzOffset Type="9">-45</AzOffset>
-			<ParkingAz Type="9">273</ParkingAz>
+			<ParkingAz Type="9">313</ParkingAz>
 			<ParkingEl Type="9">-1</ParkingEl>
 			<GoParking Type="2">-1</GoParking>
 			<AzOffset Type="9">0</AzOffset>
